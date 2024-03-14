@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { debounce } from "../Debounce/debounce";
 
 type TArray = {
   color: string;
@@ -36,7 +37,7 @@ const Search = () => {
       value: "#000",
     },
   ];
-
+  const debounceVal = debounce(value, 500);
   return (
     <div className="flex flex-col gap-5">
       <div className="w-[500px]  border-gray-300 border-2 outline-none rounded-lg py-1 px-4">
@@ -50,10 +51,12 @@ const Search = () => {
       <div className="max-w-[600px] flex flex-wrap gap-8">
         {array
           .filter((item) =>
-            item.color.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+            item.color
+              .toLocaleLowerCase()
+              .includes(debounceVal.toLocaleLowerCase())
           )
           .map((item) => (
-            <div className={`bg-[${item.value}]`}>{item.color}</div>
+            <div key={item.value}>{item.color}</div>
           ))}
       </div>
     </div>
