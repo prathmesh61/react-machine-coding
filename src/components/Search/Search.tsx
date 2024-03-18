@@ -39,7 +39,10 @@ const Search = () => {
   ];
   const debounceVal = debounce(value, 500);
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col justify-center gap-5 h-screen">
+      <h1 className="font-extrabold text-2xl bg-blue-300 p-3 rounded-lg">
+        Search component with debounce
+      </h1>
       <div className="w-[500px]  border-gray-300 border-2 outline-none rounded-lg py-1 px-4">
         <input
           type="text"

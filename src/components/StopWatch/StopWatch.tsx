@@ -15,7 +15,10 @@ const StopWatch = () => {
     timeRef.current = null;
   };
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col justify-center gap-8 h-screen">
+      <h1 className="font-extrabold text-2xl bg-blue-300 p-3 rounded-lg">
+        Stop-watch component
+      </h1>
       <h1 className="font-bold text-3xl">{timer}</h1>
       <div className="flex gap-4">
         <button

@@ -32,13 +32,16 @@ const PasswordGenerator = () => {
   };
 
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col justify-center gap-10 h-screen">
+      <h1 className="font-extrabold text-2xl bg-blue-300 p-3 rounded-lg">
+        Password Generator component
+      </h1>
       <div className="flex gap-4 outline-none ">
         <input
           type="text"
           className="w-[300px] px-2 outline-none border-2 text-black border-gray-300 rounded-md placeholder:text-gray-400"
           placeholder="password"
-          value={password}
+          defaultValue={password}
         />
         <button className="w-fit p-2 rounded-md bg-black text-white">
           copy
